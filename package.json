@@ -36,7 +36,10 @@
   "peerDependencies": {
     "react": "*"
   },
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "react"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
