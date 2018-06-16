@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-function AsyncLoader(options: {
+export default function AsyncLoader(options: {
   loader: () => Promise<React.Component>;
   loading: React.Component;
 }) {
@@ -65,5 +65,3 @@ function AsyncLoader(options: {
     };
   };
 }
-
-export default AsyncLoader;

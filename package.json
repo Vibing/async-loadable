@@ -1,8 +1,8 @@
 {
-  "name": "dynamic-loading",
-  "version": "0.1.0",
+  "name": "async-loader",
+  "version": "0.1.1",
   "description": "A simple way to get a dynamic import component",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.config.babel.js --progress --color"
   },
