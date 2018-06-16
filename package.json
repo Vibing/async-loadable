@@ -1,6 +1,6 @@
 {
-  "name": "async-loader",
-  "version": "0.1.1",
+  "name": "async-loadable",
+  "version": "0.1.0",
   "description": "A simple way to get a dynamic import component",
   "main": "./lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vibing/async-loader.git"
+    "url": "git+https://github.com/Vibing/async-loadable.git"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.3",
@@ -43,7 +43,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vibing/async-loader/issues"
+    "url": "https://github.com/Vibing/async-loadable/issues"
   },
-  "homepage": "https://github.com/Vibing/async-loader#readme"
+  "homepage": "https://github.com/Vibing/async-loadab#readme"
 }

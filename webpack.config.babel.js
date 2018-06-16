@@ -1,5 +1,4 @@
 import path from 'path';
-import tsImportPluginFactory from 'ts-import-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 export default {
