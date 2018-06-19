@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 
 export default function AsyncLoader(options: {
   loader: () => Promise<React.Component>;
@@ -16,7 +16,7 @@ export default function AsyncLoader(options: {
     options
   );
 
-  return class Loadable extends Component<any, any> {
+  return class Loadable extends React.Component<any, any> {
     constructor(props) {
       super(props);
       this.state = {

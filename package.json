@@ -1,10 +1,11 @@
 {
   "name": "async-loadable",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A simple way to get a dynamic import component",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config webpack.config.babel.js --progress --color"
+    "build": "./node_modules/.bin/webpack --config webpack.config.babel.js --progress --color",
+    "tsc": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",

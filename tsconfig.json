@@ -2,19 +2,17 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "rootDir": "./src",
-    "outDir": "./build/",
-    "sourceMap": false,
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es2015",
+    "jsx": "react",
     "noImplicitAny": false,
+    "sourceMap": false,
+    "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "module": "es2015",
-    "target": "es6",
-    "jsx": "react"
+    "skipLibCheck": true,
+    "declarationDir": "./dist/typings"
   },
-  "exclude": ["lib", "node_modules"]
+  "exclude": ["dist", "node_modules"]
 }
