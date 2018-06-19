@@ -64,3 +64,5 @@ const Component1 = getComponent('./component1');
 const Component2 = getComponent('./component2');
 const Component3 = getComponent('./component3');
 ```
+
+async-loadable 使用一种简单的方式来获取组件，它不仅可以基于路由来动态获取组件，也可以基于业务来获取组件，并且有效的避免了代码浪费。
