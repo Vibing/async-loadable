@@ -2,7 +2,7 @@
 
 对于一个 React 项目来说，代码拆分（Code Splitting）非常重要，绝大多数项目使用**基于路由**的动态拆分，但这样会造成一个问题：**代码浪费**
 
-例如一个 Tab 切换功能，如果用户只看第一个 Tab 里的内容，没有去点击其他 Tab，则会造成代码浪费，而我们的项目中，类似这样的情况非常多。
+例如 Tab 切换，如果用户只看第一个 Tab 里的内容，没有去点击其他 Tab，则会造成代码浪费，而我们的项目中，类似这样的情况非常多。
 
 我们想通过一种简单的方式来解决这个问题，所以就有了`async-loadable`
 
@@ -13,7 +13,9 @@
 但`import()`方法获取组件并不方便，我们更想要一种简单的方式来获取组件，比如：
 
 ```js
-const MyComponent = getComponent('./my-component');
+const MyComponent = getComponent({
+    component: import('./my-component')
+});
 
 render() {
     return <MyComponent/>
@@ -36,7 +38,7 @@ import Loading from './loding-component';
 
 const MyComponent = AsyncLoadable({
   loader: () => import(`./my-component`),
-  loading: Loading
+  loading: props => <Loading {...props} />
 });
 
 export default class Home extends Component {
@@ -46,23 +48,6 @@ export default class Home extends Component {
 }
 ```
 
-`Loading`是在组件加载完毕之前的一个过渡组件。
+async-loadable 建议提供一个 loading 组件来过渡，它是一个方法，参数 `props`中包含 error 和 loading 状态。
 
-如果加载的组件过多，建议可以封装成一个简单方法来解决这个问题：
-
-```js
-import AsyncLoadable from 'async-loadable';
-import Loading from './loding-component';
-
-const getComponent = path =>
-  AsyncLoadable({
-    loader: () => import(`${path}`),
-    loading: Loading
-  });
-
-const Component1 = getComponent('./component1');
-const Component2 = getComponent('./component2');
-const Component3 = getComponent('./component3');
-```
-
-async-loadable 使用一种简单的方式来获取组件，它不仅可以基于路由来动态获取组件，也可以基于业务来获取组件，并且有效的避免了代码浪费。
+所有通过用户操作展现的 UI（例如弹框、Tab 切换）都应该按需加载。
