@@ -6,7 +6,7 @@
 
 我们想通过一种简单的方式来解决这个问题，所以就有了`async-loadable`
 
-## 介绍
+## Introduction
 
 我们在使用 React 开发项目时，使用 webpack 的`import()`方法做代码拆分（Code Splitting）来提高项目性能。
 
