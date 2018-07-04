@@ -1,8 +1,6 @@
+/// <reference types="react" />
 import * as React from 'react';
-export default function AsyncLoader(options: {
-    loader: () => Promise<React.Component>;
-    loading: React.Component;
-}): {
+export default function AsyncLoader(options: any): {
     new (props: any): {
         componentDidMount(): void;
         render(): React.DetailedReactHTMLElement<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> | React.ComponentElement<{
@@ -12,11 +10,8 @@ export default function AsyncLoader(options: {
             error: any;
             isLoading: any;
         }, React.ComponentState, any>>;
-        /**
-         * 处理import()返回的promise
-         */
         _loader: () => Promise<void>;
-        setState<K extends string | number | symbol>(state: any, callback?: () => void): void;
+        setState<K extends string>(state: any, callback?: () => void): void;
         forceUpdate(callBack?: () => void): void;
         props: Readonly<{
             children?: React.ReactNode;

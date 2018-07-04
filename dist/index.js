@@ -10,25 +10,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 function AsyncLoader(options) {
-    if (!options.loading) {
-        throw new Error('AsyncLoader requires a `loading` component');
-    }
-    const opts = Object.assign({
-        loader: null,
+    const opts = Object.assign({}, {
+        component: null,
         loading: null
     }, options);
     return class Loadable extends React.Component {
         constructor(props) {
             super(props);
             /**
-             * 处理import()返回的promise
+             * 处理import()
              */
             this._loader = () => __awaiter(this, void 0, void 0, function* () {
                 try {
-                    const component = yield opts.loader();
+                    const c = yield opts.component();
                     this.setState({
                         loading: false,
-                        component: component.default || component
+                        component: c.default || c
                     });
                 }
                 catch (error) {
@@ -50,18 +47,18 @@ function AsyncLoader(options) {
         }
         render() {
             const { loading, component, error } = this.state;
-            if (loading || error) {
+            if ((loading || error) && opts.loading) {
+                //loading component
                 return React.createElement(opts.loading, {
                     error,
                     isLoading: loading
                 });
             }
             else if (component) {
+                //normal
                 return React.createElement(component, this.props);
             }
-            else {
-                return null;
-            }
+            return null;
         }
     };
 }
