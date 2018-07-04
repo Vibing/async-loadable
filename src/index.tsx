@@ -1,16 +1,10 @@
 import * as React from 'react';
 
-export default function AsyncLoader(options: {
-  loader: () => Promise<React.Component>;
-  loading: React.Component;
-}) {
-  if (!options.loading) {
-    throw new Error('AsyncLoader requires a `loading` component');
-  }
-
+export default function AsyncLoader(options) {
   const opts = Object.assign(
+    {},
     {
-      loader: null,
+      component: null,
       loading: null
     },
     options
@@ -33,27 +27,28 @@ export default function AsyncLoader(options: {
     render() {
       const { loading, component, error } = this.state;
 
-      if (loading || error) {
+      if ((loading || error) && opts.loading) {
+        //loading component
         return React.createElement(opts.loading, {
           error,
           isLoading: loading
         });
       } else if (component) {
+        //normal
         return React.createElement(component, this.props);
-      } else {
-        return null;
       }
+      return null;
     }
 
     /**
-     * 处理import()返回的promise
+     * 处理import()
      */
     _loader = async () => {
       try {
-        const component = await opts.loader();
+        const c = await opts.component();
         this.setState({
           loading: false,
-          component: component.default || component
+          component: c.default || c
         });
       } catch (error) {
         this.setState({
