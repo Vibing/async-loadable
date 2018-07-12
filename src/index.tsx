@@ -2,17 +2,16 @@ import * as React from 'react';
 
 interface IOptions {
   component: () => Promise<any>;
-  loading?: () => React.ComponentElement<any, any>;
+  loading?: (props) => React.ComponentElement<any, any>;
 }
-export default function AsyncLoader(IOptions) {
-  const opts = Object.assign(
-    {},
-    {
+export default function AsyncLoader(options: IOptions) {
+  const opts = {
+    ...{
       component: null,
       loading: null
     },
-    IOptions
-  );
+    ...options
+  };
 
   return class Loadable extends React.Component<any, any> {
     constructor(props) {

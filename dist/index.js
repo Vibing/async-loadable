@@ -9,11 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-function AsyncLoader(IOptions) {
-    const opts = Object.assign({}, {
+function AsyncLoader(options) {
+    const opts = Object.assign({
         component: null,
         loading: null
-    }, IOptions);
+    }, options);
     return class Loadable extends React.Component {
         constructor(props) {
             super(props);
