@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import * as React from 'react';
-export default function AsyncLoader(options: any): {
+export default function AsyncLoader(IOptions: any): {
     new (props: any): {
         componentDidMount(): void;
         render(): React.DetailedReactHTMLElement<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> | React.ComponentElement<{

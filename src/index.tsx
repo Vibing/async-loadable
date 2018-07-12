@@ -1,13 +1,17 @@
 import * as React from 'react';
 
-export default function AsyncLoader(options) {
+interface IOptions {
+  component: () => Promise<any>;
+  loading?: () => React.ComponentElement<any, any>;
+}
+export default function AsyncLoader(IOptions) {
   const opts = Object.assign(
     {},
     {
       component: null,
       loading: null
     },
-    options
+    IOptions
   );
 
   return class Loadable extends React.Component<any, any> {
