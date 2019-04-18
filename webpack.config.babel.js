@@ -1,29 +1,29 @@
-import path from 'path';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+const webpack = require('webpack');
+const path = require('path');
 
-export default {
-  entry: path.resolve(__dirname, './src/index.tsx'),
+const config = {
+  entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'index.js'
-  },
-  resolve: {
-    extensions: ['.tsx'],
-    modules: ['node_modules']
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
-        test: /\.(tsx|ts)$/,
+        test: /\.(ts|tsx)?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
       },
       {
-        test: /\.(js|jsx)?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader?cacheDirectory=true'
-      },
-      { test: /\.json$/, loader: 'json-loader' }
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      }
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
   }
 };
+
+module.exports = config;

@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "module": "commonjs",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "moduleResolution": "node",
     "target": "es2015",
-    "jsx": "react",
-    "noImplicitAny": false,
-    "sourceMap": false,
-    "declaration": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "declarationDir": "./dist/typings"
+    "allowJs": true,
+    "jsx": "react"
   },
+  "include": ["./src/**/*"],
   "exclude": ["dist", "node_modules"]
 }

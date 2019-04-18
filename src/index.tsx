@@ -2,7 +2,7 @@ import * as React from 'react';
 
 interface IOptions {
   component: () => Promise<any>;
-  loading?: (props) => React.ComponentElement<any, any>;
+  loading?: (props: any) => React.ComponentElement<any, any>;
 }
 export default function AsyncLoader(options: IOptions) {
   const opts = {
@@ -14,7 +14,7 @@ export default function AsyncLoader(options: IOptions) {
   };
 
   return class Loadable extends React.Component<any, any> {
-    constructor(props) {
+    constructor(props: any) {
       super(props);
       this.state = {
         loading: true,

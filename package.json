@@ -1,38 +1,31 @@
 {
   "name": "async-loadable",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple way to get a dynamic import component",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config webpack.config.babel.js --progress --color",
+    "build": "./node_modules/.bin/webpack  --config webpack.config.babel.js -p --mode production --progress --color",
     "tsc": "./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vibing/async-loadable.git"
   },
-  "devDependencies": {
-    "@types/classnames": "^2.2.3",
-    "@types/node": "^8.0.51",
-    "@types/react": "^16.0.22",
-    "@types/react-dom": "^16.0.3",
-    "add-asset-html-webpack-plugin": "^2.1.2",
-    "babel-core": "^6.26.0",
-    "babel-loader": "6.4.1",
-    "babel-plugin-minify-dead-code-elimination": "^0.2.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "json-loader": "^0.5.7",
-    "ts-import-plugin": "^1.4.2",
-    "ts-loader": "^3.1.1",
-    "typescript": "^2.6.1",
-    "uglifyjs-webpack-plugin": "^1.1.1",
-    "webpack": "^3.8.1"
-  },
   "dependencies": {
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "typescript": "^3.4.3",
+    "ts-loader": "^5.3.3",
+    "babel-loader": "^8.0.5",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "@babel/preset-react": "^7.0.0"
   },
   "peerDependencies": {
     "react": "*"
