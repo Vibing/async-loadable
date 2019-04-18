@@ -1,6 +1,6 @@
 {
   "name": "async-loadable",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A simple way to get a dynamic import component",
   "main": "./dist/index.js",
   "scripts": {
