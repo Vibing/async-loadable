@@ -1,9 +1,6 @@
 # Include your project-specific ignores in this file
 
-#忽略上传的文件夹
-**/build/**
-**/lib/**
-**/dist/**
+
 **/.idea/**
 **/node_modules/**
 **/.vscode/**
